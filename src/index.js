@@ -239,19 +239,76 @@ console.log(Object.assign(obj111,obj112))
  * 13. Set 和 WeakSet 数据结构
  * **/ 
 
-let setArr = new Set(['jspang','技术胖','web','jspang']);
-console.log(setArr);//Set {"jspang", "技术胖", "web"}
-let setArr1 = new Array(['jspang','技术胖','web','jspang']);
-console.log(setArr1);//[Array(4)]0: Array(4)0: "jspang"1: "技术胖"2: "web"3: "jspang"
+let setArr = new Set(['jspang','name','web','jspang']);
+console.log(setArr);//Set {"jspang", "name", "web"}
+let setArr1 = new Array(['jspang','name','web','jspang']);
+console.log(setArr1);//[Array(4)]0: Array(4)0: "jspang"1: "name"2: "web"3: "jspang"
 
 // set 的增删查
 // 追加add：
 setArr.add('age')
-console.log(setArr)//{"jspang", "技术胖", "web", "age"}
+console.log(setArr)//{"jspang", "name", "web", "age"}
 // 删除delete：
 setArr.delete('age')
-console.log(setArr)//{"jspang", "技术胖", "web"}
+console.log(setArr)//{"jspang", "name", "web"}
 // 查找has：
 console.log(setArr.has('jspang'))//true
 // 清除clear:
 console.log(setArr.clear());//undefined
+
+/**
+ * set的循环 for...of 循环:
+ * set的循环 forEach 循环:
+ * */ 
+setArr = new Set(['jspang','name','web','jspang']);//自动除重
+for(let i of setArr){
+    console.log(i)
+}
+console.log(setArr.size)//3 类似于size
+setArr.forEach((val)=>{console.log(val)}) //打印同for of
+
+/**
+ * WeakSet 的声明 类似于set 的对象版 内部自动除重
+ * 
+ * **/ 
+let weaksetObj = new WeakSet()
+let obj13 = {name:'a',age:12}
+let obj131 = obj13
+weaksetObj.add(obj13)
+weaksetObj.add(obj131)
+console.log(weaksetObj)
+
+
+/***
+ * 14. map数据结构
+ * 增删查
+ * */ 
+let json14 = {
+    name:'web',
+    age:16
+}
+
+// 增加 set
+let map14 = new Map()
+map14.set(json14,'tag')
+console.log(map14) //0: {Object => "tag"} key: {name: "web", age: 16} value: "tag"
+
+let map141 = new Map()
+map141.set('tag',json14)
+console.log(map141) //0: {"tag" => Object} key: "tag" value: {name: "web", age: 16}
+
+// 取值 get
+console.log(map14.get(json14)) // tag
+console.log(map141.get('tag')) // {name: "web", age: 16}
+
+// 删除 delete
+map14.delete(json14)
+console.log(map14) // Map(0)
+
+// 查找 has //查询值
+console.log(map141.has('tag'))//true
+console.log(map141.has('web'))//false
+// 查找 has //查询key
+console.log(typeof(map14))//true
+console.log(map141.has('tag'))//true
+console.log(map141.has('web'))//false
