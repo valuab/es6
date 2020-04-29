@@ -424,3 +424,16 @@ console.log(map141.has('web')); //false
 console.log(typeof map14 === 'undefined' ? 'undefined' : _typeof(map14)); //true
 console.log(map141.has('tag')); //true
 console.log(map141.has('web')); //false
+
+async function f1() {
+  console.log(1);
+}
+async function f2() {
+  console.log(1);
+}
+async function f3() {
+  console.log(1);
+}
+async function f4() {
+  console.log(1);
+}
