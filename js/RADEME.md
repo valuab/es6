@@ -5,3 +5,4 @@
 4. Map and Set（映射和集合）方法 => 04.js
 5. WeakMap and WeakSet（弱映射和弱集合）方法 => 05.js
 6. Object.keys，values，entries 对象转换 方法 => 06.js
+7. 解构赋值 方法 => 06.js
