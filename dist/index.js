@@ -437,9 +437,3 @@ async function f3() {
 async function f4() {
   console.log(1);
 }
-'use strict';
-
-console.log('modular');
-'use strict';
-
-console.log('module');
