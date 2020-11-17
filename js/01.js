@@ -1,3 +1,9 @@
+/*
+ * @Author: YJ
+ * @Date: 2020-06-30 14:12:49
+ * @
+# Description: 
+ */
 let user = {};
 user.name = "John"
 user.surname = "Smith"
@@ -95,3 +101,4 @@ console.log(multiplyNumeric(menu))
 //       alert( this.step );
 //     }
 //   };
+

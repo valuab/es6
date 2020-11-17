@@ -1,7 +1,7 @@
 // JSON 方法
 // JSON.stringify 对象字符串化
 function log(val) {
-    console.log(val)
+    console.log(val,''+this)
 }
 
 let student = {
@@ -88,6 +88,33 @@ log(meetup)
  * 
  * */ 
 log(JSON.stringify(meetup,function replacer(key,value){
-    log(key)
+    log( )
     log(value)
 }))
+
+// 初始值 proxy
+let data = {
+    name:'joy',
+    age:18
+}
+
+let newData = new Proxy(data,{
+    get(){
+        console.log('读取')
+    },
+    set(){
+        console.log('写入')
+    }
+})
+
+
+// data.name
+newData.name //读取
+newData.age = 19 //写入
+newData.width = 191 //写入
+newData.width //读取
+
+// Reflect
+let caps = {}
+Reflect.set(caps, 'name', 'John')
+Reflect.construct(()=>{},'参数列表','up')
